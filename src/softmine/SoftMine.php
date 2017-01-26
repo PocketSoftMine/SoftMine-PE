@@ -41,11 +41,11 @@ namespace {
 	}
 
 	function dummy(){
-
 	}
 }
 
 namespace softmine {
+	
 	use softmine\utils\Binary;
 	use softmine\utils\MainLogger;
 	use softmine\utils\ServerKiller;
@@ -53,11 +53,11 @@ namespace softmine {
 	use softmine\utils\Utils;
 	use softmine\wizard\Installer;
 
-	const VERSION = "1.7dev";
-	const API_VERSION = "1.13.1";
-	const CODENAME = "PockeTec";
-	const MINECRAFT_VERSION = "v0.14.0 alpha";
-	const MINECRAFT_VERSION_NETWORK = "0.14.0";
+	const VERSION = "2.0dev";
+	const API_VERSION = "3.0.0";
+	const CODENAME = "RangePE";
+	const MINECRAFT_VERSION = "v1.0.0.16";
+	const MINECRAFT_VERSION_NETWORK = "1.0.0.16";
 
 	/*
 	 * Startup code. Do not look at it, it may harm you.
@@ -96,7 +96,7 @@ namespace softmine {
 	$autoloader->register(true);
 
 
-	set_time_limit(0); //Who set it to 30 seconds?!?!
+	set_time_limit(0);
 
 	gc_enable();
 	error_reporting(-1);
@@ -383,7 +383,6 @@ namespace softmine {
 	}
 
 	if(!extension_loaded("uopz")){
-		//$logger->notice("Couldn't find the uopz extension. Some functions may be limited");
 	}
 
 	if(extension_loaded("softmine")){
@@ -420,12 +419,12 @@ namespace softmine {
 		$logger->critical("Please use the installer provided on the homepage, or recompile PHP again.");
 		$logger->shutdown();
 		$logger->join();
-		exit(1); //Exit with error
+		exit(1);
 	}
 
 	if(file_exists(\softmine\PATH . ".git/refs/heads/master")){ //Found Git information!
 		define('softmine\GIT_COMMIT', strtolower(trim(file_get_contents(\softmine\PATH . ".git/refs/heads/master"))));
-	}else{ //Unknown :(
+	}else{
 		define('softmine\GIT_COMMIT', str_repeat("00", 20));
 	}
 
@@ -460,5 +459,4 @@ namespace softmine {
 	echo Terminal::$FORMAT_RESET . "\n";
 
 	exit(0);
-
 }

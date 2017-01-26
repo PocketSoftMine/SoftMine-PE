@@ -102,7 +102,8 @@ use softmine\utils\VersionString;
 /**
  * The class that manages everything
  */
-class Server{
+class Server {
+	
 	const BROADCAST_CHANNEL_ADMINISTRATIVE = "softmine.broadcast.admin";
 	const BROADCAST_CHANNEL_USERS = "softmine.broadcast.user";
 
@@ -407,7 +408,6 @@ class Server{
 			case Player::SPECTATOR:
 				return "%gameMode.spectator";
 		}
-
 		return "UNKNOWN";
 	}
 
@@ -670,14 +670,13 @@ class Server{
 	 */
 	public function getOfflinePlayerData($name){
 		$name = strtolower($name);
-		$path = $this->getDataPath() . "players/";
+		$path = $this->getDataPath()."players/";
 		if(file_exists($path . "$name.dat")){
 			try{
 				$nbt = new NBT(NBT::BIG_ENDIAN);
 				$nbt->readCompressed(file_get_contents($path . "$name.dat"));
-
 				return $nbt->getData();
-			}catch(\Throwable $e){ //zlib decode error / corrupt data
+			}catch(\Throwable $e){
 				rename($path . "$name.dat", $path . "$name.dat.bak");
 				$this->logger->notice($this->getLanguage()->translateString("softmine.data.playerCorrupted", [$name]));
 			}
@@ -694,11 +693,6 @@ class Server{
 				new DoubleTag(2, $spawn->z)
 			]),
 			new StringTag("Level", $this->getDefaultLevel()->getName()),
-			//new StringTag("SpawnLevel", $this->getDefaultLevel()->getName()),
-			//new IntTag("SpawnX", (int) $spawn->x),
-			//new IntTag("SpawnY", (int) $spawn->y),
-			//new IntTag("SpawnZ", (int) $spawn->z),
-			//new ByteTag("SpawnForced", 1), //TODO
 			new ListTag("Inventory", []),
 			new CompoundTag("Achievements", []),
 			new IntTag("playerGameType", $this->getGamemode()),
@@ -723,7 +717,7 @@ class Server{
 		$nbt->Motion->setTagType(NBT::TAG_Double);
 		$nbt->Rotation->setTagType(NBT::TAG_Float);
 
-		if(file_exists($path . "$name.yml")){ //Importing old softmine files
+		if(file_exists($path."$name.yml")){
 			$data = new Config($path . "$name.yml", Config::YAML, []);
 			$nbt["playerGameType"] = (int) $data->get("gamemode");
 			$nbt["Level"] = $data->get("position")["level"];
@@ -776,7 +770,6 @@ class Server{
 		$this->saveOfflinePlayerData($name, $nbt);
 
 		return $nbt;
-
 	}
 
 	/**
@@ -2083,7 +2076,6 @@ class Server{
 		}
 
 		$this->logger->emergency($this->getLanguage()->translateString("softmine.crash.submit", [$dump->getPath()]));
-
 
 		if($this->getProperty("auto-report.enabled", true) !== false){
 			$report = true;
