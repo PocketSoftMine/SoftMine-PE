@@ -10,24 +10,24 @@ SoftMine-PE or SoftMine-2, is based to PocketMine-MP, ClearSky, Genisys and Imag
 - Otimização ao Minecraft Windows 10 Edition
 
 ## Suporte a Plataformas
-- Minecraft PocketEdition 0.14.0
-- Minecraft PocketEdition 0.15.0
+- Minecraft PocketEdition 0.16.0
+- Minecraft PocketEdition 1.0.0
 - Minecraft Windows 10 Edition
-- Minecraft PC 1.8 - 1.9(Proxy)
+- Minecraft PC 1.8 (Proxy)
 
 # English - Ingles
 
 ## What SoftMine will bring?
 - Plugins System (New)
 - Optimization to Minecraft PocketEdition
-- Optimization to Minecraft PC 1.8 - 1.9
+- Optimization to Minecraft PC 1.8
 - Optimization to Minecraft Windows 10 Edition
 
 ## Support Platforms
-- Minecraft PocketEdition 0.14.0
-- Minecraft PocketEdition 0.15.0
+- Minecraft PocketEdition 0.16.0
+- Minecraft PocketEdition 1.0.0
 - Minecraft Windows 10 Edition
-- Minecraft PC 1.8 - 1.9 (Proxy)
+- Minecraft PC 1.8 (Proxy)
 
 
 # Japanese - 日本語
@@ -41,7 +41,7 @@ SoftMine-PE or SoftMine-2, is based to PocketMine-MP, ClearSky, Genisys and Imag
 
 ## 対応クライエント
 
-- マインクラフト:ポケットエディション 0.14.0+
-- マインクラフト:ポケットエディション 0.15.0+
-- マインクラフト:デスクトップ版(ウインドウズ、マック) 1.8-1.9
+- マインクラフト:ポケットエディション 0.16.0+
+- マインクラフト:ポケットエディション 1.0.0+
+- マインクラフト:デスクトップ版(ウインドウズ、マック) 1.8
 - マインクラフト:ウインドウズ10版
