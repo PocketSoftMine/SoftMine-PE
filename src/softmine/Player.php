@@ -136,7 +136,7 @@ use softmine\utils\TextFormat;
 //RakLib
 use raklib\Binary;
 
-class Player extends Human implements CommandSender, InventoryHolder, ChunkLoader, IPlayer{
+class Player extends Human implements CommandSender, InventoryHolder, ChunkLoader, IPlayer {
 
 	const SURVIVAL = 0;
 	const CREATIVE = 1;
@@ -246,7 +246,6 @@ class Player extends Human implements CommandSender, InventoryHolder, ChunkLoade
 			$this->getDisplayName()
 		]);
 	}
-	}
 	
 	public function getClientId(){
 		return $this->randomClientId;
@@ -263,7 +262,7 @@ class Player extends Human implements CommandSender, InventoryHolder, ChunkLoade
 	public function setBanned($value){
 		if($value === true){
 			$this->server->getNameBans()->addBan($this->getName(), null, null, null);
-			$this->kick("You have been banned");
+			$this->kick("You are Banned");
 		}else{
 			$this->server->getNameBans()->remove($this->getName());
 		}
@@ -363,3 +362,4 @@ class Player extends Human implements CommandSender, InventoryHolder, ChunkLoade
 		$this->hiddenPlayers[$player->getRawUniqueId()] = $player;
 		$player->despawnFrom($this);
 	}
+}

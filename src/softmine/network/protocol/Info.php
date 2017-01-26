@@ -87,7 +87,6 @@ interface Info{
 	const GAME_RULES_CHANGED_PACKET = 0x48;
 	const CAMERA_PACKET = 0x49;
 	const ADD_ITEM_PACKET = 0x4a;
-	const BOSS_EVENT_PACKET = 0x4b;
 	const SHOW_CREDITS_PACKET = 0x4c;
 	const COMMAND_STEP_PACKET = 0x4e;
 }

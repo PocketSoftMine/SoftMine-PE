@@ -24,7 +24,8 @@ namespace softmine\network\protocol;
 #include <rules/DataPacket.h>
 
 
-class PlayerListPacket extends DataPacket{
+class PlayerListPacket extends DataPacket {
+	
 	const NETWORK_ID = Info::PLAYER_LIST_PACKET;
 
 	const TYPE_ADD = 0;
@@ -41,7 +42,6 @@ class PlayerListPacket extends DataPacket{
 	}
 
 	public function decode(){
-
 	}
 
 	public function encode(){
@@ -60,5 +60,4 @@ class PlayerListPacket extends DataPacket{
 			}
 		}
 	}
-
 }
