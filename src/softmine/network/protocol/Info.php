@@ -90,14 +90,3 @@ interface Info{
 	const SHOW_CREDITS_PACKET = 0x4c;
 	const COMMAND_STEP_PACKET = 0x4e;
 }
-
-
-
-
-
-
-
-
-
-
-
